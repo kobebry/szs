@@ -1,0 +1,39 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+
+logging:
+  file:
+    name: ${user.dir}/log/test.log  # 로깅 파일 위치이다.
+    max-history: 30 # 로그 파일 삭제 주기이다. 7일 이후 로그는 삭제한다.
+    max-size: 10MB  # 로그 파일 하나당 최대 파일 사이즈이다.
+  level:  # 각 package 별로 로깅 레벨을 지정할 수 있다.
+    com.project.study : error
+    com.project.study.controller : debug
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+
+aes:
+  key: 12345678910111213
+  senderPwKey: 45781369510111213
+
+cloud:
+  aws:
+    credentials:
+      accessKey: AKIAVOJ3QEFIUP4JFMHF
+      secretKey: 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
+    s3:
+      bucket: gvc-s3
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+l-bati:
+  url: "https://a-api.bati.ai"
+#  url: "https://l-api.bati.ai/v1"
+
+

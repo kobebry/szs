@@ -1,0 +1,71 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'war'
+}
+bootWar {
+	archiveName("bati-eapi.war")
+}
+wrapper {
+	gradleVersion = "5.6.4"
+	distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+// compile encoding 설정.
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
+
+
+
+group = 'ai.ndata'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.grapecity.documents:gcexcel:5.1.0'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 'org.projectlombok:lombok:1.18.24'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+	implementation 'org.slf4j:slf4j-api:1.7.36'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	runtimeOnly 'com.h2database:h2'
+
+	implementation 'mysql:mysql-connector-java'
+	implementation 'com.microsoft.sqlserver:mssql-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.5.RELEASE'
+	implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+	implementation 'com.google.code.gson:gson:2.8.6'
+	implementation group: 'org.mindrot', name: 'jbcrypt', version: '0.3m'
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	implementation group: 'org.json', name: 'json', version: '20090211'
+	implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
+
+	implementation 'com.google.api-client:google-api-client:1.33.0'
+	implementation 'com.google.oauth-client:google-oauth-client-jetty:1.32.1'
+	implementation 'com.google.apis:google-api-services-drive:v3-rev20211107-1.32.1'
+	implementation 'com.google.auth:google-auth-library-oauth2-http:1.3.0'
+}
+
+
+jar {
+	enabled = false
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+apply plugin:'war'
