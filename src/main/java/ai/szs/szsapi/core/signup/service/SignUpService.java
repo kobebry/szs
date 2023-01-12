@@ -49,8 +49,8 @@ public class SignUpService {
         Optional<Member> memberResult = memberRepository.findByUserId(signUpSetDto.getUserId());
 
         /* 2.조회 결과 */
-        if(memberResult.isEmpty()){
-            return new ResponseObject(CommonException.SIGNUP_ALREADY_MEMBER.getResultcode(), CommonException.SIGNUP_ALREADY_MEMBER.getResultMessage() + " 주민등록번호");
+        if(!memberResult.isEmpty()){
+            return new ResponseObject(CommonException.SIGNUP_ALREADY_MEMBER.getResultcode(), CommonException.SIGNUP_ALREADY_MEMBER.getResultMessage());
         }
 
         /* 3.등록가능 유저 확인 */
@@ -65,7 +65,7 @@ public class SignUpService {
 
         /* 4.등록가능 유저 확인 결과 */
         if(!availableFlag){
-            return new ResponseObject(CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultcode(), CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultMessage() + " 주민등록번호");
+            return new ResponseObject(CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultcode(), CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultMessage());
         }
 
         /* 5.Member insert */

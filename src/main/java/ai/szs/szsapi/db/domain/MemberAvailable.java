@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name="t_member")
+@Table(name="MEMBER_AVAILABLE")
 @Data
 @Builder
 @NoArgsConstructor

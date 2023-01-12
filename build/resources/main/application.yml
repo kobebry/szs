@@ -3,3 +3,4 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 jwt.secretKey: 45781369510111213
+
