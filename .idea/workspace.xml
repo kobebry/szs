@@ -4,7 +4,87 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63343c13-f582-4f44-bb71-eabd2d480c78" name="Changes" comment="" />
+    <list default="true" id="63343c13-f582-4f44-bb71-eabd2d480c78" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/config/ServletConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/MemberAvailable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/repository/MemberAvailableRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/kill_process.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/remove_before.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/run_process.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/common/enums/CommonException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/common/enums/CommonException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/common/enums/enumLink.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/common/model/ResponseObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/common/model/ResponseObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/config/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/config/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/config/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/core/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/core/model/LoginGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/core/model/LoginSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/core/model/ResetPasswordGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/core/model/ResetPasswordSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/core/model/SocialLoginSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/core/service/LoginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingList/controller/CrawlingListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingList/model/CrawlingKeywordListGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingList/model/CrawlingKeywordListSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingList/model/FileCompanyListGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingList/model/FileCompanyListSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingList/service/CrawlingListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingReport/controller/CrawlingReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingReport/model/CrawlingReportGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingReport/model/CrawlingReportSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingReport/service/CrawlingReportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/controller/CrawlingResultController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingLinkedListExcelSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingLinkedListGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingLinkedListSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingResultItemListGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingResultItemListSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsDetailListGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsDetailListSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsListGetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsListGetDto_subList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsListSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsListSetDto_subList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/model/CrawlingStatisticsSetDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/crawling/crawlingResult/service/CrawlingResultService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/File.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/FileCompany.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/FileDict.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/FileItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/FileTrade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/Keyword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/KeywordTranslation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/ProjectFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/ProjectHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/Work.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/WorkHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/WorkShare.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/WorkTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/domain/WorkTemplateList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/specification/FileSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/db/specification/KeywordSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/szsApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/szsApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/utill/AES256.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/utill/ExcelUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/szs/szsapi/utill/S3Uploader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +107,44 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KE2k13bR0pLN9KzTUcYm5DOX1X" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a07d98e3a9aa8a56ae871e6431f22156&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ai.szs.szsapi.config" />
+      <recent name="ai.szs.szsapi.db.repository" />
+      <recent name="ai.szs.szsapi.db.domain" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="szsApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="szs-api.main" />
@@ -36,7 +154,31 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63343c13-f582-4f44-bb71-eabd2d480c78" name="Changes" comment="" />
+      <created>1673525560810</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673525560810</updated>
+      <workItem from="1673525562058" duration="3349000" />
+      <workItem from="1673528929460" duration="261000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

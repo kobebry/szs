@@ -1,72 +1,56 @@
 package ai.szs.szsapi.config;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import java.time.Duration;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
+@Component
 public class JwtTokenProvider {
 
-    private String secretKey = "webfirewood";
+    @Value("${jwt.secretKey}")
+    private String secretKey;
 
-    private long tokenValidTime = 30 * 60 * 1000L;     // 토큰 유효시간 30분
-
-    //private final UserDetailsService userDetailsService;
-
-    // 객체 초기화, secretKey를 Base64로 인코딩
     @PostConstruct
     protected void init() {
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
     }
 
     // 토큰 생성
-    public String createToken(String userPk, List<String> roles) {  // userPK = email
-        Claims claims = Jwts.claims().setSubject(userPk); // JWT payload 에 저장되는 정보단위
-        claims.put("roles", roles); // 정보는 key / value 쌍으로 저장
+    public String createToken(String subject) {
         Date now = new Date();
+        Date expiration = new Date(now.getTime() + Duration.ofDays(1).toMillis()); // 만료기간 1일
+
         return Jwts.builder()
-                .setClaims(claims) // 정보 저장
-                .setIssuedAt(now) // 토큰 발행 시간 정보
-                .setExpiration(new Date(now.getTime() + tokenValidTime)) // 토큰 유효시각 설정
-                .signWith(SignatureAlgorithm.HS256, secretKey)  // 암호화 알고리즘과, secret 값
+                .setHeaderParam(Header.TYPE, Header.JWT_TYPE) // (1)
+                .setIssuer("szs") // 토큰발급자(iss)
+                .setIssuedAt(now) // 발급시간(iat)
+                .setExpiration(expiration) // 만료시간(exp)
+                .setSubject(subject) //  토큰 제목(subject)
+                .signWith(SignatureAlgorithm.HS256, Base64.getEncoder().encodeToString(secretKey.getBytes())) // 알고리즘, 시크릿 키
                 .compact();
     }
 
-    // 인증 정보 조회
-    public Authentication getAuthentication(String token) {
-        //UserDetails userDetails = userDetailsService.loadUserByUsername(this.getUserPk(token));
-        //return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
-
-        return new UsernamePasswordAuthenticationToken(null, "", null);
-
+    //==Jwt 토큰의 유효성 체크 메소드==//
+    public Claims parseJwtToken(String token) {
+        token = BearerRemove(token); // Bearer 제거
+        return Jwts.parser()
+                .setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes()))
+                .parseClaimsJws(token)
+                .getBody();
     }
 
-    // 토큰에서 회원 정보 추출
-    public String getUserPk(String token) {
-        return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getSubject();
-    }
-
-    // 토큰 유효성, 만료일자 확인
-    public boolean validateToken(String jwtToken) {
-        try {
-            Jws<Claims> claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(jwtToken);
-            return !claims.getBody().getExpiration().before(new Date());
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    // Request의 Header에서 token 값 가져오기
-    public String resolveToken(HttpServletRequest request) {
-        return request.getHeader("X-AUTH-TOKEN");
+    //==토큰 앞 부분('Bearer') 제거 메소드==//
+    private String BearerRemove(String token) {
+        return token.substring("Bearer ".length());
     }
 
 }

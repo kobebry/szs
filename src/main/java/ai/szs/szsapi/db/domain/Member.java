@@ -20,42 +20,28 @@ import java.time.LocalDateTime;
 public class Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="mIdx")
-    @JsonProperty("mIdx")
-    private Long mIdx;
+    @Column(name="memberIdx")
+    @JsonProperty("memberIdx")
+    private Long memberIdx;
 
-    @Column(name="mId")
-    @JsonProperty("mId")
-    private String mId;
+    @Column(name="userId")
+    @JsonProperty("userId")
+    private String userId;
 
-    @Column(name="email")
-    @JsonProperty("email")
-    private String email;
+    @Column(name="password")
+    @JsonProperty("password")
+    private String password;
 
-    @Column(name="hashed_password")
-    @JsonProperty("hashed_password")
-    private String hashed_password;
+    @Column(name="name")
+    @JsonProperty("name")
+    private String name;
 
-    @Column(name="mName")
-    @JsonProperty("mName")
-    private String mName;
+    @Column(name="regNo")
+    @JsonProperty("regNo")
+    private String regNo;
 
-    @Column(name="memberType")
-    @JsonProperty("memberType")
-    private String memberType;
-
-    @Column(name="lastLoginDate")
-    @JsonProperty("lastLoginDate")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd HH:mm:ss", timezone = "Asia/Seoul")
-    private LocalDateTime lastLoginDate;
-
-    @Column(name="regDate", insertable=false, updatable = false)
+    @Column(name="regDate", updatable = false)
     @JsonProperty("regDate")
     private String regDate;
-
-    @Column(name="modDate", insertable=false, updatable = false)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd HH:mm:ss", timezone = "Asia/Seoul")
-    private LocalDateTime modDate;
-
 
 }

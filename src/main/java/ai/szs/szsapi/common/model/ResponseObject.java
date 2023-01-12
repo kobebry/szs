@@ -2,23 +2,34 @@ package ai.szs.szsapi.common.model;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class ResponseObject {
 
-    public String resultCode;
+    public String status;
 
     public String resultMessage;
 
-    public Object responseDto;
+    public List<String> errors;
 
-    public ResponseObject(String resultCode, String resultMessage) {
-        this.resultCode = resultCode;
+    public Object data;
+
+    public ResponseObject(String status, String resultMessage) {
+        this.status = status;
         this.resultMessage = resultMessage;
     }
 
-    public ResponseObject(String resultCode, String resultMessage, Object responseDto) {
-        this.resultCode = resultCode;
+    public ResponseObject(String status, String resultMessage, Object data) {
+        this.status = status;
         this.resultMessage = resultMessage;
-        this.responseDto = responseDto;
+        this.data = data;
+    }
+
+    public ResponseObject(String status, String resultMessage, Object data, List<String> errors) {
+        this.status = status;
+        this.resultMessage = resultMessage;
+        this.data = data;
+        this.errors = errors;
     }
 }
