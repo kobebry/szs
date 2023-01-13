@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import java.time.Duration;
-import java.util.Base64;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class JwtTokenProvider {
@@ -25,16 +23,19 @@ public class JwtTokenProvider {
     }
 
     // 토큰 생성
-    public String createToken(String subject) {
+    public String createToken(String memberIdx) {
         Date now = new Date();
         Date expiration = new Date(now.getTime() + Duration.ofDays(1).toMillis()); // 만료기간 1일
+        Map<String, Object> paramMap = new HashMap();
+        paramMap.put("memberIdx", memberIdx);
 
         return Jwts.builder()
                 .setHeaderParam(Header.TYPE, Header.JWT_TYPE) // (1)
                 .setIssuer("szs") // 토큰발급자(iss)
                 .setIssuedAt(now) // 발급시간(iat)
                 .setExpiration(expiration) // 만료시간(exp)
-                .setSubject(subject) //  토큰 제목(subject)
+                .setClaims(paramMap)
+                .setSubject(memberIdx) //  토큰 제목(subject)
                 .signWith(SignatureAlgorithm.HS256, Base64.getEncoder().encodeToString(secretKey.getBytes())) // 알고리즘, 시크릿 키
                 .compact();
     }
