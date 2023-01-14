@@ -25,7 +25,7 @@ public class LoginService {
     private final JwtTokenProvider jwtTokenProvider;
 
     public ResponseObject login(LoginSetDto loginSetDto){
-        log.info("[batiLogin] : {}", loginSetDto);
+        log.info("[login] : {}", loginSetDto);
 
         /* 유효성 검사 */
         if(StringUtils.isEmpty(loginSetDto.getUserId())){

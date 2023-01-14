@@ -20,7 +20,7 @@ public class LoginController {
     private final LoginService loginService;
 
     /**
-     * GVC - 로그인
+     * szs - 로그인
      * **/
     @ResponseBody
     @PostMapping("/login")

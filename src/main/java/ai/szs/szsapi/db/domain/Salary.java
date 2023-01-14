@@ -66,4 +66,8 @@ public class Salary {
     @JsonProperty("사업자등록번호")
     private String 사업자등록번호;
 
+    @Column(name="year")
+    @JsonProperty("year")
+    private String year;
+
 }

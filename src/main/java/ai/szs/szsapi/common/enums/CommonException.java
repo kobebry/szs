@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum CommonException {
 
-    SUCCESS("0000", "정상처리됐습니다"),
+    SUCCESS("success", "정상처리됐습니다"),
 
     SIGNUP_PARAM_VALID_ERROR("1001", "회원가입 필수값 누락 : "),
     SIGNUP_ALREADY_MEMBER("1002", "이미 가입된 회원입니다."),
@@ -17,6 +17,8 @@ public enum CommonException {
     LOGIN_NOT_IN_USER("1012", "등록된 아이디가 아닙니다."),
     LOGIN_NOT_EQUAL_PASSWORD("1012", "비밀번호가 일치하지 않습니다."),
 
+    SCRAP_USER_ERROR("2001", "조회된 회원 정보가 없습니다."),
+    SCRAP_EMPTY_SALARY("2002", "등록된 급여정보가 없습니다."),
 
 
     PARAM_VALID_ERROR("5001", "필수값 누락");
