@@ -1,5 +1,6 @@
 # 삼쩜삼 과제 - 최재훈
 http://localhost:8080/swagger-ui/
+java11, spring boot 2.7.0, JPA, H2, Gradle
 
 1~5번 문제 모두 구현됐습니다.
 테스트 순서는
