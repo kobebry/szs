@@ -11,6 +11,6 @@ import java.util.Optional;
 @Repository
 public interface TaxAmountRepository extends JpaRepository<TaxAmount, Long> {
 
-    Optional<TaxAmount> findByMemberIdx(@Param("memberIdx") long memberIdx);
+    Optional<TaxAmount> findByUserId(@Param("userId") String userId);
 
 }

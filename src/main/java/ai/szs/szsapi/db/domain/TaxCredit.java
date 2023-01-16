@@ -22,9 +22,9 @@ public class TaxCredit {
     @JsonProperty("taxIdx")
     private Long taxIdx;
 
-    @Column(name="memberIdx")
-    @JsonProperty("memberIdx")
-    private Long memberIdx;
+    @Column(name="userId")
+    @JsonProperty("userId")
+    private String userId;
 
     @Column(name="금액")
     @JsonProperty("금액")

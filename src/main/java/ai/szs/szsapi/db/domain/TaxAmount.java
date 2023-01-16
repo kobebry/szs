@@ -22,9 +22,9 @@ public class TaxAmount {
     @JsonProperty("taxAmountIdx")
     private Long taxAmountIdx;
 
-    @Column(name="memberIdx")
-    @JsonProperty("memberIdx")
-    private Long memberIdx;
+    @Column(name="userId")
+    @JsonProperty("userId")
+    private String userId;
 
     @Column(name="산출세액")
     @JsonProperty("산출세액")

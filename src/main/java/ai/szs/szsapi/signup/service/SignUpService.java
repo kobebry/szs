@@ -72,7 +72,6 @@ public class SignUpService {
                             .name(signUpSetDto.getName())
                             .password(BCrypt.hashpw(signUpSetDto.getPassword(), BCrypt.gensalt()))//hash 암호화
                             .regNo(BCrypt.hashpw(signUpSetDto.getRegNo(), BCrypt.gensalt()))//hash 암호화
-                            .regDate(LocalDate.now().toString())
                             .build();
 
         memberRepository.save(member);

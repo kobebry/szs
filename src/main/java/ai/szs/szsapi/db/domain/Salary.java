@@ -22,9 +22,9 @@ public class Salary {
     @JsonProperty("salaryIdx")
     private Long salaryIdx;
 
-    @Column(name="memberIdx")
-    @JsonProperty("memberIdx")
-    private Long memberIdx;
+    @Column(name="userId")
+    @JsonProperty("userId")
+    private String userId;
 
     @Column(name="소득내역")
     @JsonProperty("소득내역")

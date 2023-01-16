@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface TaxCreditRepository extends JpaRepository<TaxCredit, Long> {
 
-    List<TaxCredit> findAllByMemberIdx(@Param("memberIdx") long memberIdx);
+    List<TaxCredit> findAllByUserId(@Param("userId") String userId);
 }

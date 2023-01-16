@@ -52,17 +52,17 @@ public class UserService {
         }
         /* 1.급여 정보 조회 */
         LocalDate now = LocalDate.now();
-        List<SalaryList> salaryList = salaryRepository.findAllByMAndMemberIdx(member.get().getMemberIdx(), String.valueOf(now.getYear()));
+        List<SalaryList> salaryList = salaryRepository.findAllByAndUserId(member.get().getUserId(), String.valueOf(now.getYear()));
 
         /* 2.급여 정보 조회 결과 */
         if(salaryList.isEmpty()){
             return new ResponseObject(CommonException.SCRAP_EMPTY_SALARY.getResultcode(), CommonException.SCRAP_EMPTY_SALARY.getResultMessage());
         }
         /* 3.산출세액 조회 */
-        Optional<TaxAmount> taxAmount = taxAmountRepository.findByMemberIdx(member.get().getMemberIdx());
+        Optional<TaxAmount> taxAmount = taxAmountRepository.findByUserId(member.get().getUserId());
 
         /* 4.소득공제 조회 */
-        List<TaxCredit> taxCreditList = taxCreditRepository.findAllByMemberIdx(member.get().getMemberIdx());
+        List<TaxCredit> taxCreditList = taxCreditRepository.findAllByUserId(member.get().getUserId());
 
         List<Map> 소득공제 =new ArrayList<>();
         for(TaxCredit taxCredit : taxCreditList){
@@ -98,18 +98,18 @@ public class UserService {
 
         /* 1.급여 정보 조회 */
         LocalDate now = LocalDate.now();
-        List<SalaryList> salaryList = salaryRepository.findAllByMAndMemberIdx(member.get().getMemberIdx(), String.valueOf(now.getYear()));
+        List<SalaryList> salaryList = salaryRepository.findAllByAndUserId(member.get().getUserId(), String.valueOf(now.getYear()));
         double 급여 = Double.parseDouble(salaryList.get(0).get총지급액().replace(",",""));
 
         /* 2.산출세액 조회 */
-        Optional<TaxAmount> taxAmount = taxAmountRepository.findByMemberIdx(member.get().getMemberIdx());
+        Optional<TaxAmount> taxAmount = taxAmountRepository.findByUserId(member.get().getUserId());
         double 산출세액 = Double.parseDouble(taxAmount.get().get산출세액().replace(",",""));
 
         //근로소득세액공제금액
         double 근로소득세액공제금액 = Double.parseDouble(taxAmount.get().get산출세액().replace(",","")) * 0.55;
 
         /* 3.소득공제 조회 */
-        List<TaxCredit> taxCreditList = taxCreditRepository.findAllByMemberIdx(member.get().getMemberIdx());
+        List<TaxCredit> taxCreditList = taxCreditRepository.findAllByUserId(member.get().getUserId());
 
         double 특별세액공제금액 = 0;
         double 퇴직연금세액공제금액 = 0;

@@ -15,7 +15,7 @@ import java.util.List;
 public interface SalaryRepository extends JpaRepository<Salary, Long> {
 
 
-    @Query(value = "select 소득내역,총지급액,업무시작일,기업명,이름,지급일,업무종료일,주민등록번호,소득구분,사업자등록번호 from Salary as s where memberIdx = :memberIdx and year = :year", nativeQuery = true)
-    List<SalaryList> findAllByMAndMemberIdx(@Param("memberIdx") long memberIdx, @Param("year") String year);
+    @Query(value = "select 소득내역,총지급액,업무시작일,기업명,이름,지급일,업무종료일,주민등록번호,소득구분,사업자등록번호 from Salary as s where userId = :userId and year = :year", nativeQuery = true)
+    List<SalaryList> findAllByAndUserId(@Param("userId") String userId, @Param("year") String year);
 
 }

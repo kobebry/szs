@@ -40,8 +40,4 @@ public class Member {
     @JsonProperty("regNo")
     private String regNo;
 
-    @Column(name="regDate", updatable = false)
-    @JsonProperty("regDate")
-    private String regDate;
-
 }
