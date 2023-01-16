@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.6.5'
+	id 'org.springframework.boot' version '2.7.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 	id 'war'
@@ -38,7 +38,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	implementation 'com.h2database:h2'
+	implementation 'com.h2database:h2:1.4.200'
 	implementation 'com.google.code.gson:gson:2.8.6'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
 

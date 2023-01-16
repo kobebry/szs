@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -67,11 +68,12 @@ public class SignUpService {
         }
 
         /* 5.Member insert */
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         Member member = Member.builder()
                             .userId(signUpSetDto.getUserId())
                             .name(signUpSetDto.getName())
-                            .password(BCrypt.hashpw(signUpSetDto.getPassword(), BCrypt.gensalt()))//hash 암호화
-                            .regNo(BCrypt.hashpw(signUpSetDto.getRegNo(), BCrypt.gensalt()))//hash 암호화
+                            .password(encoder.encode(signUpSetDto.getPassword()))//hash 암호화
+                            .regNo(encoder.encode(signUpSetDto.getRegNo()))//hash 암호화
                             .build();
 
         memberRepository.save(member);

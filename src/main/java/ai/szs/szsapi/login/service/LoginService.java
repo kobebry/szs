@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -44,7 +45,8 @@ public class LoginService {
         }
 
         /* 3.비밀번호 체크 */
-        if(!BCrypt.checkpw(loginSetDto.getPassword(), memberResult.get().getPassword())){
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        if(!encoder.matches(loginSetDto.getPassword(), memberResult.get().getPassword())){
             return new ResponseObject(CommonException.LOGIN_NOT_EQUAL_PASSWORD.getResultcode(), CommonException.LOGIN_NOT_EQUAL_PASSWORD.getResultMessage());
         }
 
