@@ -44,27 +44,20 @@ public class SignUpService {
             return new ResponseObject(CommonException.SIGNUP_PARAM_VALID_ERROR.getResultcode(), CommonException.SIGNUP_PARAM_VALID_ERROR.getResultMessage() + " 주민등록번호");
         }
 
-        /* 1.회원 등록여부 조회 */
+        /* 1.등록가능 유저 확인 */
+        Optional<MemberAvailable> memberAvailable = memberAvailableRepository.findByNameAndRegNo(signUpSetDto.getName(),signUpSetDto.getRegNo());
+
+        /* 2.등록가능 유저 확인 결과 */
+        if(memberAvailable.isEmpty()){
+            return new ResponseObject(CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultcode(), CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultMessage());
+        }
+
+        /* 3.회원 등록여부 조회 */
         Optional<Member> memberResult = memberRepository.findByUserId(signUpSetDto.getUserId());
 
-        /* 2.조회 결과 */
+        /* 4.조회 결과 */
         if(!memberResult.isEmpty()){
             return new ResponseObject(CommonException.SIGNUP_ALREADY_MEMBER.getResultcode(), CommonException.SIGNUP_ALREADY_MEMBER.getResultMessage());
-        }
-
-        /* 3.등록가능 유저 확인 */
-        boolean availableFlag = false;
-        List<MemberAvailable> memberAvailableList = memberAvailableRepository.findAll();
-
-        for(MemberAvailable memberAvailable : memberAvailableList){
-            if(memberAvailable.getName().equals(signUpSetDto.getName()) && memberAvailable.getRegNo().equals(signUpSetDto.getRegNo())){
-                availableFlag = true;
-            }
-        }
-
-        /* 4.등록가능 유저 확인 결과 */
-        if(!availableFlag){
-            return new ResponseObject(CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultcode(), CommonException.SIGNUP_NOT_AVAILABLE_USER.getResultMessage());
         }
 
         /* 5.Member insert */

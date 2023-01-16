@@ -1,7 +1,7 @@
 # 삼쩜삼 과제 - 최재훈
 http://localhost:8080/swagger-ui/
-java11, spring boot 2.7.0, JPA, H2, Gradle
-
+IntelliJ, java11, spring boot 2.7.0, JPA, H2, Gradle
+  
 1~5번 문제 모두 구현됐습니다.
 테스트 순서는
 회원가업 -> 로그인(토큰 취득) -> Swagger Authorize -> Bearer [토큰] 입력 후 Authorize 클릭
